@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Profesional | Muhammad Abdul Qoyyum S.Ag., M.Pd.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-dark: #0a192f;
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #d97706;
+            --secondary-light: #f59e0b;
+            --accent: #059669;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-600: #4b5563;
+            --gray-800: #1f2937;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            --shadow-xl: 0 20px 40px -10px rgba(0,0,0,0.2);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--gray-800);
+            background: linear-gradient(135deg, var(--light-bg) 0%, #f1f5f9 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(30, 58, 138, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(217, 119, 6, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .header-scrolled {
+            padding: 0.7rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-dark);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 0 4rem;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .hero-image-container {
+            position: relative;
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .profile-image-wrapper {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid var(--white);
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-icon {
+            font-size: 8rem;
+            color: white;
+            opacity: 0.8;
+        }
+
+        .image-frame {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--secondary);
+            border-radius: 50%;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title span {
+            color: var(--primary-dark); /* UBAH DI SINI - SEKARANG HITAM */
+        }
+
+        .hero-credentials {
+            font-size: 1.3rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(30, 58, 138, 0.05);
+            border-radius: var(--radius-md);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* PROFILE DETAILS */
+        .profile-details {
+            padding: 6rem 0;
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            margin: 2rem 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+            border-radius: 2px;
+        }
+
+        /* Accordion */
+        .accordion-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            margin-bottom: 1rem;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            background: var(--white);
+        }
+
+        .accordion-header {
+            padding: 1.5rem 2rem;
+            background: var(--light-bg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background: var(--gray-50);
+        }
+
+        .accordion-header.active {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .accordion-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+            color: var(--secondary-light);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--white);
+        }
+
+        .accordion-content.active {
+            max-height: 1000px;
+        }
+
+        .accordion-body {
+            padding: 2rem;
+        }
+
+        /* Content Styles */
+        .education-item, .experience-item, .organization-item {
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary);
+            margin-bottom: 1.5rem;
+            background: var(--gray-50);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+
+        .education-item:last-child, .experience-item:last-child, .organization-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .item-period {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 600;
+            background: rgba(217, 119, 6, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+        }
+
+        .item-institution {
+            color: var(--gray-600);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            padding: 1.5rem;
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--secondary);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-level {
+            height: 6px;
+            background: var(--gray-200);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .skill-level-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+            border-radius: 3px;
+        }
+
+        /* PILLARS SECTION */
+        .pillars-section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .pillar-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .pillar-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            background: rgba(217, 119, 6, 0.1);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .pillar-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .pillar-subtitle {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .pillar-description {
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .pillar-features {
+            list-style: none;
+            margin-top: auto;
+        }
+
+        .pillar-features li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--gray-600);
+        }
+
+        .pillar-features li i {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            padding: 6rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary);
+        }
+
+        .contact-icon-wrapper {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .contact-details h4 {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-details p, .contact-details a {
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .contact-details a:hover {
+            color: var(--secondary);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-light);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE - SUPER IMPORTANT */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .profile-image-wrapper {
+                width: 320px;
+                height: 320px;
+                order: -1;
+            }
+            
+            .pillars-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow-lg);
+                border-radius: var(--radius-md);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 6rem 0 3rem;
+                min-height: auto;
+            }
+            
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-credentials {
+                font-size: 1.1rem;
+            }
+            
+            .profile-image-wrapper {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .profile-icon {
+                font-size: 6rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .accordion-header {
+                padding: 1.25rem 1.5rem;
+            }
+            
+            .accordion-title {
+                font-size: 1.1rem;
+            }
+            
+            .contact-grid {
+                gap: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .profile-image-wrapper {
+                width: 240px;
+                height: 240px;
+            }
+            
+            .profile-icon {
+                font-size: 5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .pillar-card {
+                padding: 1.5rem;
+            }
+            
+            .pillar-title {
+                font-size: 1.3rem;
+            }
+            
+            .contact-card {
+                padding: 1.5rem;
+            }
+            
+            .contact-icon-wrapper {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .contact-details p, .contact-details a {
+                font-size: 1rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .skill-item {
+                padding: 1rem;
+            }
+            
+            .education-item, .experience-item, .organization-item {
+                padding: 1.25rem;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .item-period {
+                align-self: flex-start;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .profile-image-wrapper {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .profile-icon {
+                font-size: 4rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pillar-card {
+                padding: 1.25rem;
+            }
+        }
+
+        /* Touch Device Optimization */
+        @media (hover: none) and (pointer: coarse) {
+            .pillar-card:hover,
+            .skill-item:hover,
+            .contact-card:hover {
+                transform: none;
+            }
+            
+            .pillar-card:active,
+            .skill-item:active,
+            .contact-card:active {
+                transform: scale(0.98);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-book-open logo-icon"></i>
+                <span>MAQ</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Beranda</a></li>
+                <li><a href="#profile">Profil</a></li>
+                <li><a href="#pillars">Keahlian</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <!-- SUBTITLE DIHAPUS DI SINI -->
+                    <h1 class="hero-title">Muhammad Abdul <span>Qoyyum</span></h1>
+                    <span class="hero-credentials">S.Ag., M.Pd.</span>
+                    
+                    <p class="hero-description">
+                        Edukator Islam dan Spesialis Manajemen Pendidikan dengan pengalaman di bidang pendidikan Islam, manajemen organisasi, dan public speaking. 
+                        Berkomitmen untuk mengintegrasikan nilai-nilai Islam dengan praktik pendidikan modern.
+                    </p>
+                    
+                    <div class="hero-cta">
+                        <a href="#profile" class="btn btn-primary">
+                            <i class="fas fa-user-graduate"></i> Lihat Profil Lengkap
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Hubungi Saya
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image-container">
+                    <div class="profile-image-wrapper">
+                        <i class="fas fa-user-graduate profile-icon"></i>
+                        <div class="image-frame"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED PROFILE SECTION -->
+    <section class="profile-details" id="profile">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Data Profesional</p>
+                <h2 class="section-title">Profil & Kualifikasi</h2>
+            </div>
+            
+            <div class="accordion-container">
+                <!-- PENDIDIKAN -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="accordion-title">
+                            <i class="fas fa-graduation-cap accordion-icon"></i>
+                            Riwayat Pendidikan
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="education-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">S2 - Manajemen Pendidikan Islam</h3>
+                                    <span class="item-period">2021 - 2023</span>
+                                </div>
+                                <p class="item-institution">Institut Perguruan Tinggi Ilmu Al-Qur'an (PTIQ), Jakarta</p>
+                                <p class="item-description">Program studi Manajemen Pendidikan Islam</p>
+                            </div>
+                            
+                            <div class="education-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">S1 - Ilmu Tafsir</h3>
+                                    <span class="item-period">2016 - 2020</span>
+                                </div>
+                                <p class="item-institution">Institut Perguruan Tinggi Ilmu Al-Qur'an (PTIQ), Jakarta</p>
+                                <p class="item-description">Program studi Ilmu Tafsir</p>
+                            </div>
+                            
+                            <div class="education-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">Pondok Pesantren & MAN</h3>
+                                    <span class="item-period">2012 - 2016</span>
+                                </div>
+                                <p class="item-institution">Prafah Islamic Boarding School dan MAN Cibinong</p>
+                                <p class="item-description">Pendidikan pesantren dan Madrasah Aliyah Negeri</p>
+                            </div>
+                            
+                            <div class="education-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">SMP Islamic Boarding School</h3>
+                                    <span class="item-period">2007 - 2010</span>
+                                </div>
+                                <p class="item-institution">SMPIT Al-Kahfi Islamic Boarding School</p>
+                                <p class="item-description">Sekolah Menengah Pertama Islam Terpadu dengan sistem boarding</p>
+                            </div>
+                            
+                            <div class="education-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">Sekolah Dasar</h3>
+                                    <span class="item-period">2001 - 2007</span>
+                                </div>
+                                <p class="item-institution">SDN Cibatok 03</p>
+                                <p class="item-description">Pendidikan dasar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PENGALAMAN KERJA -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="accordion-title">
+                            <i class="fas fa-briefcase accordion-icon"></i>
+                            Pengalaman Kerja
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="experience-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">General Manager</h3>
+                                </div>
+                                <p class="item-institution">ALIMA Event Organizer</p>
+                                <p class="item-description">Bertanggung jawab sebagai General Manager di perusahaan event organizer</p>
+                            </div>
+                            
+                            <div class="experience-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">Guru Pendidikan Islam</h3>
+                                </div>
+                                <p class="item-institution">Berbagai Lembaga Pendidikan</p>
+                                <p class="item-description">
+                                    • SDIT Rahmatan lil Alamin Bogor<br>
+                                    • Pondok Pesantren Markazul Qur'an Bogor<br>
+                                    • Yayasan Attaufiqul Mubarok Muara Angke<br>
+                                    • SMK Raudlatul Ilmiyah Jakarta Selatan<br>
+                                    • MTs Raudlatul Ilmiyah Jakarta Selatan<br>
+                                    • SDIT Al-Uswah Jakarta Selatan
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PENGALAMAN ORGANISASI -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="accordion-title">
+                            <i class="fas fa-users accordion-icon"></i>
+                            Pengalaman Organisasi
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="organization-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">Ketua Umum</h3>
+                                    <span class="item-period">2019/2020</span>
+                                </div>
+                                <p class="item-institution">KOMPPAQ Jawa Barat & Banten</p>
+                                <p class="item-description">Korps Mahasiswa Penghafal dan Pengkaji Al-Qur'an (KOMPPAQ) Paguyuban Mahasiswa/i Jawa Barat dan Banten</p>
+                            </div>
+                            
+                            <div class="organization-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">Kementerian Pendidikan & Kebudayaan</h3>
+                                    <span class="item-period">2018/2019</span>
+                                </div>
+                                <p class="item-institution">Badan Eksekutif Mahasiswa</p>
+                                <p class="item-description">Anggota kementerian pendidikan dan kebudayaan dalam struktur BEM</p>
+                            </div>
+                            
+                            <div class="organization-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">Koordinator Humas</h3>
+                                    <span class="item-period">2017/2018</span>
+                                </div>
+                                <p class="item-institution">KOMPPAQ Jawa Barat & Banten</p>
+                                <p class="item-description">Korps Mahasiswa Penghafal dan Pengkaji Al-Qur'an (KOMPPAQ) Paguyuban Mahasiswa/i Jawa Barat dan Banten</p>
+                            </div>
+                            
+                            <div class="organization-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">Bidang Kesiswaan</h3>
+                                </div>
+                                <p class="item-institution">Pondok Pesantren Markazul Qur'an Bogor</p>
+                                <p class="item-description">Bertanggung jawab pada bidang kesiswaan di pondok pesantren</p>
+                            </div>
+                            
+                            <div class="organization-item">
+                                <div class="item-header">
+                                    <h3 class="item-title">Ketua Karang Taruna</h3>
+                                </div>
+                                <p class="item-institution">Pondok Cabe, Tangerang Selatan</p>
+                                <p class="item-description">Memimpin organisasi karang taruna di tingkat komunitas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- KEAHLIAN -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="accordion-title">
+                            <i class="fas fa-tools accordion-icon"></i>
+                            Keahlian & Kompetensi
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-users-cog"></i>
+                                    </div>
+                                    <h4 class="skill-name">Manajemen Organisasi</h4>
+                                    <p>Kemampuan mengelola organisasi dan tim</p>
+                                    <div class="skill-level">
+                                        <div class="skill-level-bar" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-microphone"></i>
+                                    </div>
+                                    <h4 class="skill-name">Public Speaking</h4>
+                                    <p>Kemampuan berbicara di depan umum</p>
+                                    <div class="skill-level">
+                                        <div class="skill-level-bar" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-running"></i>
+                                    </div>
+                                    <h4 class="skill-name">Olahraga</h4>
+                                    <p>Minat dan kemampuan dalam bidang olahraga</p>
+                                    <div class="skill-level">
+                                        <div class="skill-level-bar" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-video"></i>
+                                    </div>
+                                    <h4 class="skill-name">Konten Video</h4>
+                                    <p>Kemampuan membuat konten video</p>
+                                    <div class="skill-level">
+                                        <div class="skill-level-bar" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                    </div>
+                                    <h4 class="skill-name">Pengajaran</h4>
+                                    <p>Pengalaman mengajar di berbagai lembaga</p>
+                                    <div class="skill-level">
+                                        <div class="skill-level-bar" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="skill-item">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-hands-helping"></i>
+                                    </div>
+                                    <h4 class="skill-name">Kepemimpinan</h4>
+                                    <p>Pengalaman memimpin organisasi</p>
+                                    <div class="skill-level">
+                                        <div class="skill-level-bar" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THREE PILLARS SECTION -->
+    <section class="pillars-section" id="pillars">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Fokus Utama</p>
+                <h2 class="section-title">Tiga Pilar Keahlian</h2>
+            </div>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card animate-on-scroll">
+                    <div class="pillar-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="pillar-title">Edukator Islam</h3>
+                    <p class="pillar-subtitle">Pengajar & Pendidik</p>
+                    <p class="pillar-description">
+                        Pengalaman mengajar di 7 lembaga pendidikan Islam dengan pendekatan yang sesuai kebutuhan siswa.
+                    </p>
+                    <ul class="pillar-features">
+                        <li><i class="fas fa-check"></i> Guru di berbagai jenjang pendidikan</li>
+                        <li><i class="fas fa-check"></i> Pengalaman mengajar lebih dari 7 tahun</li>
+                        <li><i class="fas fa-check"></i> Fokus pada pendidikan Islam</li>
+                        <li><i class="fas fa-check"></i> Pendekatan pengajaran yang variatif</li>
+                    </ul>
+                </div>
+                
+                <div class="pillar-card animate-on-scroll">
+                    <div class="pillar-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="pillar-title">Manajer Organisasi</h3>
+                    <p class="pillar-subtitle">Pemimpin & Pengelola</p>
+                    <p class="pillar-description">
+                        Pengalaman memimpin dan mengelola organisasi di tingkat mahasiswa dan masyarakat.
+                    </p>
+                    <ul class="pillar-features">
+                        <li><i class="fas fa-check"></i> Ketua Umum KOMPPAQ Jabar & Banten</li>
+                        <li><i class="fas fa-check"></i> Ketua Karang Taruna</li>
+                        <li><i class="fas fa-check"></i> Koordinator Humas organisasi</li>
+                        <li><i class="fas fa-check"></i> General Manager Event Organizer</li>
+                    </ul>
+                </div>
+                
+                <div class="pillar-card animate-on-scroll">
+                    <div class="pillar-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="pillar-title">Professional Speaker</h3>
+                    <p class="pillar-subtitle">Komunikator & Presenter</p>
+                    <p class="pillar-description">
+                        Kemampuan public speaking dan pembuatan konten video untuk berbagai keperluan edukasi.
+                    </p>
+                    <ul class="pillar-features">
+                        <li><i class="fas fa-check"></i> Public speaking di berbagai forum</li>
+                        <li><i class="fas fa-check"></i> Pembuatan konten video edukatif</li>
+                        <li><i class="fas fa-check"></i> Komunikasi efektif dengan audiens</li>
+                        <li><i class="fas fa-check"></i> Presentasi materi pendidikan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Hubungi Saya</p>
+                <h2 class="section-title">Mari Berkolaborasi</h2>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-user contact-icon"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Nama Panggilan</h4>
+                            <p>Qoyyum</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-envelope contact-icon"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:mabdqoyyum@gmail.com">mabdqoyyum@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-phone contact-icon"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telepon / WhatsApp</h4>
+                            <a href="tel:+6285697397078">+62 856-9739-7078</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Alamat</h4>
+                            <p>Jl. Gunung Salak Endah, RT 02/RW 07</p>
+                            <p>Desa Gunung Sari, Pamijahan, Bogor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Muhammad Abdul Qoyyum</div>
+                    <p class="footer-description">
+                        Edukator Islam, Spesialis Manajemen Pendidikan, dan Praktisi dengan pengalaman di berbagai lembaga pendidikan. 
+                        Berkomitmen untuk mengembangkan pendidikan Islam yang berkualitas.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://wa.me/6285697397078" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:mabdqoyyum@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Keahlian</h4>
+                    <ul class="footer-links">
+                        <li><a href="#pillars">Edukator Islam</a></li>
+                        <li><a href="#pillars">Manajemen Organisasi</a></li>
+                        <li><a href="#pillars">Public Speaking</a></li>
+                        <li><a href="#pillars">Pengembangan Konten</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Navigasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#profile">Profil Lengkap</a></li>
+                        <li><a href="#pillars">Keahlian</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy;  Muhammad Abdul Qoyyum S.Ag., M.Pd. | Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header Scroll Effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!navLinks.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+
+            // Accordion Functionality
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const accordionItem = this.parentElement;
+                    const accordionContent = this.nextElementSibling;
+                    
+                    // Close all other accordion items
+                    document.querySelectorAll('.accordion-content').forEach(content => {
+                        if (content !== accordionContent) {
+                            content.classList.remove('active');
+                            content.previousElementSibling.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    accordionContent.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            });
+
+            // Scroll Animation
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Smooth Scrolling for Navigation Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // Update active nav link
+                        document.querySelectorAll('.nav-links a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Close mobile menu if open
+                        if (window.innerWidth <= 768) {
+                            navLinks.classList.remove('active');
+                            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                        
+                        // Scroll to element
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Update active nav link on scroll
+            const sections = document.querySelectorAll('section[id]');
+            window.addEventListener('scroll', function() {
+                let current = '';
+                const scrollPosition = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Touch device optimization
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                // Add touch-specific optimizations
+                document.body.classList.add('touch-device');
+            }
+        });
+    </script>
+</body>
+</html>
