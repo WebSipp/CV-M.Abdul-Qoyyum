@@ -168,6 +168,7 @@
             font-size: 1.5rem;
             color: var(--primary-dark);
             cursor: pointer;
+            z-index: 1001;
         }
 
         /* HERO SECTION */
@@ -210,6 +211,13 @@
             justify-content: center;
         }
 
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         .profile-icon {
             font-size: 8rem;
             color: white;
@@ -242,7 +250,7 @@
         }
 
         .hero-title span {
-            color: var(--primary-dark); /* UBAH DI SINI - SEKARANG HITAM */
+            color: var(--primary-dark);
         }
 
         .hero-credentials {
@@ -410,7 +418,8 @@
         }
 
         .accordion-content.active {
-            max-height: 1000px;
+            max-height: 2000px;
+            overflow-y: auto;
         }
 
         .accordion-body {
@@ -840,6 +849,7 @@
                 padding: 1rem;
                 box-shadow: var(--shadow-lg);
                 border-radius: var(--radius-md);
+                z-index: 1000;
             }
             
             .nav-links.active {
@@ -866,10 +876,6 @@
             .profile-image-wrapper {
                 width: 280px;
                 height: 280px;
-            }
-            
-            .profile-icon {
-                font-size: 6rem;
             }
             
             .hero-cta {
@@ -926,10 +932,6 @@
             .profile-image-wrapper {
                 width: 240px;
                 height: 240px;
-            }
-            
-            .profile-icon {
-                font-size: 5rem;
             }
             
             .section-title {
@@ -991,10 +993,6 @@
                 height: 200px;
             }
             
-            .profile-icon {
-                font-size: 4rem;
-            }
-            
             .skills-grid {
                 grid-template-columns: 1fr;
             }
@@ -1047,7 +1045,6 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <!-- SUBTITLE DIHAPUS DI SINI -->
                     <h1 class="hero-title">Muhammad Abdul <span>Qoyyum</span></h1>
                     <span class="hero-credentials">S.Ag., M.Pd.</span>
                     
@@ -1068,7 +1065,10 @@
                 
                 <div class="hero-image-container">
                     <div class="profile-image-wrapper">
-                        <i class="fas fa-user-graduate profile-icon"></i>
+                        <!-- FOTO PROFIL -->
+                        <img src="https://drive.google.com/thumbnail?id=19727BrAHN7xqwjucx65pBc6nhqbpbgNB&sz=w1000" 
+                             alt="Muhammad Abdul Qoyyum" 
+                             class="profile-image">
                         <div class="image-frame"></div>
                     </div>
                 </div>
@@ -1418,11 +1418,11 @@
                     
                     <div class="contact-card">
                         <div class="contact-icon-wrapper">
-                            <i class="fas fa-phone contact-icon"></i>
+                            <i class="fab fa-whatsapp contact-icon"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Telepon / WhatsApp</h4>
-                            <a href="tel:+6285697397078">+62 856-9739-7078</a>
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/6285697397078" target="_blank">+62 856-9739-7078</a>
                         </div>
                     </div>
                     
@@ -1500,19 +1500,33 @@
                 }
             });
 
-            // Mobile Menu Toggle
+            // Mobile Menu Toggle - FIXED VERSION
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
             
-            mobileMenuBtn.addEventListener('click', function() {
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
                 navLinks.classList.toggle('active');
                 mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
                     '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
             });
 
-            // Close mobile menu when clicking outside
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+
+            // Close mobile menu when clicking outside - FIXED VERSION
             document.addEventListener('click', function(event) {
-                if (!navLinks.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                const isClickInsideMenu = navLinks.contains(event.target);
+                const isClickOnMenuButton = mobileMenuBtn.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnMenuButton && window.innerWidth <= 768) {
                     navLinks.classList.remove('active');
                     mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                 }
